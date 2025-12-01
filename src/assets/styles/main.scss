@@ -8,9 +8,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  font-family: Montserrat, sans-serif;
+}
+
 body {
   background-color: var(--color-copper-hover-30);
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
 }

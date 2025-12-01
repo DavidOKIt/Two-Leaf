@@ -32,6 +32,8 @@ module.exports = function(eleventyConfig) {
 		},
 	});  
 
+	eleventyConfig.addPassthroughCopy("src/assets/fonts2");
+
     return {
         dir: {
             input: "src",
