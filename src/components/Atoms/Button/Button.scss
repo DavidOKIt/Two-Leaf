@@ -6,7 +6,7 @@
   border-radius: var(--border-radius-normal);
   font-size: var(--font-size-14);
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);
@@ -19,6 +19,7 @@
   &:active:focus-visible {
     outline: none;
   }
+
   &:disabled {
     opacity: 0.3;
     cursor: not-allowed;

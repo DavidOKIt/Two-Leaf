@@ -3,7 +3,7 @@
 @use "fonts";
 @use "var";
 
-//Atoms
+// Atoms
 @use "../../components/Atoms/Icon/Icon.scss";
 @use "../../components/Atoms/Button/Button.scss";
 @use "../../components/Atoms/Link/Link.scss";
@@ -13,9 +13,18 @@
 @use "../../components/Atoms/Checkbox/Checkbox.scss";
 @use "../../components/Atoms/Toggle/Toggle.scss";
 @use "../../components/Atoms/Ranger/Ranger.scss";
+@use "../../components/Atoms/Inputfield/Inputfield.scss";
+@use "../../components/Atoms/Textarea/Textarea.scss";
+@use "../../components/Atoms/Dropdown/Dropdown.scss";
+@use "../../components/Atoms/Image/Image.scss";
+@use "../../components/Atoms/Chip/Chip.scss";
+@use "../../components/Atoms/Divider/Divider.scss";
+@use "../../components/Atoms/Logo/Logo.scss";
+@use "../../components/Atoms/Validation/Validation.scss";
 
 * {
   padding: 0;
+  // margin: 0;
   box-sizing: border-box;
 }
 

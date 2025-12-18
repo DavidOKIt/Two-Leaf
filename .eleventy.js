@@ -2,8 +2,10 @@ const path = require("node:path");
 const sass = require("sass");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addTemplateFormats("scss");
+	eleventyConfig.addTemplateFormats("scss");
+  	eleventyConfig.addWatchTarget('./src/components/**/**/*');
 	eleventyConfig.addPassthroughCopy("src/assets/fonts");
+	eleventyConfig.addPassthroughCopy("src/assets/img");
 	eleventyConfig.addPassthroughCopy("src/components/**/**/**.js");
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",

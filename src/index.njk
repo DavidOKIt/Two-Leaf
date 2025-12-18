@@ -1,5 +1,4 @@
 ---
-heading: "Welcome to Two Leaf"
 ---
 
 {%- from "./components/Atoms/Icon/Icon.njk" import IconEmbedded -%}
@@ -12,6 +11,14 @@ heading: "Welcome to Two Leaf"
 {%- from "./components/Atoms/Checkbox/Checkbox.njk" import Checkbox -%}
 {%- from "./components/Atoms/Toggle/Toggle.njk" import Toggle -%}
 {%- from "./components/Atoms/Ranger/Ranger.njk" import Ranger -%}
+{%- from "./components/Atoms/Inputfield/Inputfield.njk" import Inputfield -%}
+{%- from "./components/Atoms/Textarea/Textarea.njk" import Textarea -%}
+{%- from "./components/Atoms/Dropdown/Dropdown.njk" import Dropdown -%}
+{%- from "./components/Atoms/Image/Image.njk" import Image -%}
+{%- from "./components/Atoms/Chip/Chip.njk" import Chip -%}
+{%- from "./components/Atoms/Divider/Divider.njk" import Divider -%}
+{%- from "./components/Atoms/Logo/Logo.njk" import Logo -%}
+{%- from "./components/Atoms/Validation/Validation.njk" import Validation -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,18 +29,44 @@ heading: "Welcome to Two Leaf"
     <title>Two Leaf</title>
     <link rel="stylesheet" href="./assets/styles/main.css">
     <link rel="preload" href="./assets/fonts/montserrat_variable.woff2" as="font" type="font/woff2" crossorigin>
-
-    {# <link rel="preload" href="./assets/fonts2/montserrat-v31-latin-300.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="./assets/fonts2/montserrat-v31-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="./assets/fonts2/montserrat-v31-latin-500.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="./assets/fonts2/montserrat-v31-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    #}
   </head>
+
   <body>
-    <h1 class="bold">{{heading}}</h1>
+    {{ Logo ("/", "small") }}
+    {{ Logo ("/") }}
+    {{ Logo ("/", "large") }}
     {{ Ranger("preis", 100, 1, 200, "Preis", '€') }}
     {{ Ranger("time", 4, 1, 8, "Ziehzeit", 'min') }}
+    {{ Validation('Info', 'This is a success message') }}
+    {{ Validation('Success', 'This is a success message') }}
+    {{ Validation('Error', 'This is a success message') }}
+    {{ Validation('Warning', 'This is a success message') }}
 
+    <form action="">
+      {{ Inputfield('text', 'Name', LabelTop = true, 'Hello', IconRight = true, IconRightContent = 'Search', hasValidation = true, ValidationContent = { type: 'Warning', label: 'This is an info message' }) }}
+      {{ Inputfield('text', 'Name', LabelTop = false, 'Hello', IconRight = true, IconRightContent = 'Search', hasValidation = true, ValidationContent = { type: 'Error', label: 'Fehlerhafte Eingabe' }) }}
+      {{ Inputfield('email', 'Email', LabelTop = true, 'Hello', IconRight = false) }}
+      {{ Inputfield('password', 'Password', LabelTop = false, 'Hello', IconRight = false) }}
+
+    </form>
+    <br>
+    {{ Textarea('textarea01', 'description', 'Enter your description here...', LabelTop = true, 'Description') }}
+    <br>
+    {{ Dropdown ('dropdown01', 'options',{ DropdownItems: [
+        { value: 'option1', label: 'Option 1' },
+        { value: 'option2', label: 'Option 2' },
+        { value: 'option3', label: 'Option 3' },
+        { value: 'option4', label: 'Option 4' },
+        { value: 'option5', label: 'Option 5' },
+        { value: 'option6', label: 'Option 6' }
+    ]}) }}
+    <br>
+
+    {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = false, IconCheck = true) }}
+    {{ Button('Click Me', 'regular', 'primary')}}
+    {{ Divider() }}
+
+    {{ Image('./assets/img/ProductImage1.jpg', 'Sample Image', 'ProductCard', 'cover', true) }}
     <p class="light">Probe Text</p>
     <p class="medium">Probe Text 2</p>
     {{ UtilityLink ('Learn More', 'primary', '-sizeXS', 'light') }}
@@ -47,7 +80,9 @@ heading: "Welcome to Two Leaf"
     {{ Radio ('radio01', 'Test', 'radio01', 'Option 1') }}
     {{ Radio ('radio02', 'Test', 'radio02', 'Option 2') }}
     {{ Checkbox ('checkbox01', 'Test', 'checkbox01', 'Checkbox 1' ) }}
+
     <br>
+
     {{ Toggle ('checkbox02', 'Test', 'checkbox02', 'Checkbox 2' ) }}
 
     {{ Heading ('h1', '-sizeXL', 'bold', 'black', 'Im a Heading') }}
@@ -71,5 +106,9 @@ heading: "Welcome to Two Leaf"
 
     {# Scripts #}
     <script src="/components/Atoms/Ranger/Ranger.js"></script>
+    <script src="/components/Atoms/Inputfield/Inputfield.js"></script>
+    <script src="/components/Atoms/Textarea/Textarea.js"></script>
+    <script src="/components/Atoms/Dropdown/Dropdown.js"></script>
+    <script src="/components/Atoms/Chip/Chip.js"></script>
   </body>
 </html>

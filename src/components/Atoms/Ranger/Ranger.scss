@@ -23,6 +23,19 @@
   --progress: 0%;
   --track-fill: var(--color-copper-default);
 
+  &:focus-visible {
+    outline: var(--border-focus) solid var(--color-focus);
+    border-radius: var(--border-radius-normal);
+  }
+  &:active:focus-visible {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
