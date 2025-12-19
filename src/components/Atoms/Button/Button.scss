@@ -2,11 +2,11 @@
   width: auto;
   height: auto;
   padding: 12px 12px;
-  border: none;
+  border: var(--border-normal) solid transparent;
   border-radius: var(--border-radius-normal);
   font-size: var(--font-size-14);
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);

@@ -5,13 +5,13 @@
   <button type="button" class="Button Button-{{ Size }} Button-{{ Style }} {{ Outline}} {% if IconOnly %} Button-onlyIcon{% endif %}">
 
     {% if showIconLeft %}
-      {{ IconEmbedded([IconContentLeft])}}
+      {{ IconEmbedded(IconContentLeft)}}
     {% endif %}
 
     <span class="Button_label">{{ Label }}</span>
 
     {% if showIconRight %}
-      {{ IconEmbedded([IconContentRight])}}
+      {{ IconEmbedded(IconContentRight)}}
     {% endif %}
   </button>
 {% endmacro %}

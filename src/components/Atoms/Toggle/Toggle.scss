@@ -60,6 +60,7 @@
     background-color: var(--color-copper-pressed-30);
     transition: background-color border-color 0.2s ease-out;
   }
+
   &:active .slider::before {
     background-color: var(--color-copper-pressed);
   }
