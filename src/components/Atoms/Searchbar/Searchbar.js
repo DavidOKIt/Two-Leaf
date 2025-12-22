@@ -1,24 +1,21 @@
-console.log('JS loaded');
-
-document.querySelectorAll('.FocusWrapper').forEach(wrapper => {
-  console.log('Wrapper gefunden:', wrapper);
+document.querySelectorAll('.Searchbar_FocusWrapper').forEach(container => {
+  const button = container.querySelector('.Searchbar_Button');
+  const input = container.querySelector('.Searchbar_Search');
+  const addClass = () => container.classList. add('mouse-focus');
+  const removeClass = () => container.classList.remove('mouse-focus');
   
-  const button = wrapper.querySelector('. SearchButton');
-  const input = wrapper.querySelector('. Searchbar');
-
-  wrapper.addEventListener('click', (e) => {
-    if (e.target. closest('.SearchButton')) return;
-    if (e.target. tagName === 'INPUT') return;
+  container.addEventListener('click', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.closest('.Searchbar_Button')) return;
     input.focus();
   });
-
-  wrapper.addEventListener('mousedown', () => {
-    console.log('mousedown - Klasse wird gesetzt');  // ← Kommt das? 
-    wrapper.classList.add('mouse-focus');
+  
+  container.addEventListener('mousedown', (e) => { 
+    addClass();
+    if (e.target.tagName !== 'INPUT') e.preventDefault();
   });
-
-  input.addEventListener('blur', () => {
-    console.log('blur - Klasse wird entfernt');
-    wrapper.classList.remove('mouse-focus');
-  });
+  
+  container.addEventListener('focusout', removeClass);
+  button.addEventListener('mousedown', (e) => e.preventDefault());
+  button.addEventListener('focus', addClass);
+  button.addEventListener('blur', removeClass);
 });
