@@ -1,7 +1,7 @@
 const rangers = document.querySelectorAll('.Ranger');
 
 rangers.forEach(function(ranger) {
-  const label = document.getElementById(ranger. id + '-value');
+  const label = document.getElementById(ranger.id + '-value');
   const unit = ranger.dataset.unit;
   
   function updateRanger() {
@@ -17,5 +17,5 @@ rangers.forEach(function(ranger) {
   updateRanger();
   
   // Bei Änderung
-  ranger. addEventListener('input', updateRanger);
+  ranger.addEventListener('input', updateRanger);
 });

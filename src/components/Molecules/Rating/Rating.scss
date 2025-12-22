@@ -1,25 +1,12 @@
 .UneditableRating {
-  // display: inline-flex;
-  // flex-direction: row;
   align-items: center;
-  // justify-content: center;
   display: flex;
   gap: var(--space-4);
 
   &_Stars {
     display: flex;
-    // display: inline-flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: center;
+
     color: var(--color-yellow);
     gap: 0px;
-  }
-
-  &_Label {
-    // display: inline-flex;
-    // align-items: center;
-    // justify-content: center;
-    // height: 24px;
   }
 }

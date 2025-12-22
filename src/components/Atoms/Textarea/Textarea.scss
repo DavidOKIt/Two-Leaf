@@ -12,7 +12,7 @@
   border: var(--border-normal) solid var(--color-copper-default);
   border-radius: var(--border-radius-normal);
 
-  font-family: Montserrat;
+  font-family: inherit;
   color: var(--color-black);
 
   &::placeholder {

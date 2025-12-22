@@ -54,16 +54,14 @@
 
   &:has(input:checked) {
     background-color: var(--color-copper-default);
-  }
 
-  &:has(input:checked):hover {
-    cursor: pointer;
-    background-color: var(--color-copper-hover);
-  }
+    &:hover {
+      background-color: var(--color-copper-hover);
+    }
 
-  &:has(input:checked):active {
-    cursor: pointer;
-    background-color: var(--color-copper-pressed);
+    &:active {
+      background-color: var(--color-copper-pressed);
+    }
   }
 
   input {
@@ -123,22 +121,16 @@
     opacity: 1;
   }
 
-  :has(input:checked) {
-    opacity: 1;
-  }
-
   &:has(input:checked) {
     background-color: var(--color-error-default);
-  }
 
-  &:has(input:checked):hover {
-    cursor: pointer;
-    background-color: var(--color-error-hover);
-  }
+    &:hover {
+      background-color: var(--color-error-hover);
+    }
 
-  &:has(input:checked):active {
-    cursor: pointer;
-    background-color: var(--color-error-pressed);
+    &:active {
+      background-color: var(--color-error-pressed);
+    }
   }
 
   input {
