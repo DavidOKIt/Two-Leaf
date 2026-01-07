@@ -1,0 +1,17 @@
+.Downloadfield {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_ContentContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

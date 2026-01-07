@@ -4,6 +4,7 @@
   padding: 12px 12px;
   border: var(--border-normal) solid transparent;
   border-radius: var(--border-radius-normal);
+  font-family: inherit;
   font-size: var(--font-size-14);
 
   display: flex;
@@ -16,6 +17,7 @@
     outline: var(--border-focus) solid var(--color-focus);
     border-radius: var(--border-radius-normal);
   }
+
   &:active:focus-visible {
     outline: none;
   }
