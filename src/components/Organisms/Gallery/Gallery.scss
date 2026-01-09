@@ -7,6 +7,17 @@
     grid-column: 1/13;
   }
 
+  &_HeadingWrapper {
+    grid-column: 1/13;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-8);
+    padding: 32px var(--space-16);
+  }
+
   &_innerContainer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

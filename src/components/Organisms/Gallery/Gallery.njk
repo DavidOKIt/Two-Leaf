@@ -1,19 +1,24 @@
 {%- from "src/components/Atoms/Image/Image.njk" import Image %}
+{%- from "src/components/Atoms/Heading/Heading.njk" import Heading %}
+{%- from "src/components/Atoms/Paragraph/Paragraph.njk" import Paragraph %}
 
-{% macro Gallery() %}
+{% macro Gallery(HeadingContent, ParagraphContent, Images = {}) %}
+    {#  Images = {Image(Nummer) src, alt, fit, label}  #}
     <div class="Gallery">
-        <div class="Gallery_Container -sizeXL bold"> Hallo Halllo</div>
-        <div class="Gallery_Container">{{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage-horizontal', 'cover', figcaption=true, label='Label', loadinglazy=true) }}</div>
+        <div class="Gallery_HeadingWrapper">
+            {{ Paragraph ('-sizeL', 'regular', ParagraphContent)}}
+            {{ Heading ('h2', '-sizeXXL', 'bold', 'black', HeadingContent )}}
+        </div>
+        <div class="Gallery_Container">{{ Image (Images.Image1.src, Images.Image1.alt, 'GalleryImage-horizontal', Images.Image1.fit or 'cover', figcaption=true, Images.Image1.label, loadinglazy=true) }}</div>
         <div class="Gallery_Container">
             <div class="Gallery_innerContainer">
                 <div class="Gallery-left">
-                    <div>{{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage', 'cover', figcaption=true, label='Label', loadinglazy=true) }}</div>
-                    <div>{{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage', 'cover', figcaption=true, label='Label', loadinglazy=true) }}</div>
+                    <div>{{ Image (Images.Image2.src, Images.Image2.alt, 'GalleryImage', Images.Image2.fit or 'cover', figcaption=true, Images.Image2.label, loadinglazy=true) }}</div>
+                    <div>{{ Image (Images.Image3.src, Images.Image3.alt, 'GalleryImage', Images.Image3.fit or 'cover', figcaption=true, Images.Image3.label, loadinglazy=true) }}</div>
                 </div>
-                <div class="Gallery-right">{{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage-vertical', 'cover', figcaption=true, label='Label', loadinglazy=true) }}</div>
+                <div class="Gallery-right">{{ Image (Images.Image4.src, Images.Image4.alt, 'GalleryImage-vertical', Images.Image4.fit or 'cover', figcaption=true, Images.Image4.label, loadinglazy=true) }}</div>
             </div>
         </div>
-        <div class="Gallery_Container">{{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage-horizontal', 'cover', figcaption=true, label='Label', loadinglazy=true) }}</div>
+        <div class="Gallery_Container">{{ Image (Images.Image5.src, Images.Image5.alt, 'GalleryImage-horizontal', Images.Image5.fit or 'cover', figcaption=true, Images.Image5.label, loadinglazy=true) }}</div>
     </div>
-
 {% endmacro %}
