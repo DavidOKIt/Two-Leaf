@@ -1,11 +1,13 @@
 .Breadcrumb {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
-  overflow: hidden;
-  list-style-type: none;
-  gap: var(--space-4);
+  &_Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    gap: var(--space-4);
+  }
 
   &_Item {
     display: flex;

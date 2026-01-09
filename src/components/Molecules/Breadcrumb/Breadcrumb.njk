@@ -1,8 +1,8 @@
 {%- from "src/components/Atoms/Link/Link.njk" import UtilityLink %}
 
 {% macro Breadcrumb(Items = []) %}
-    <nav aria-label="breadcrumb">
-        <ol class="Breadcrumb">
+    <nav class="Breadcrumb" aria-label="Breadcrumb">
+        <ol class="Breadcrumb_Container">
             {% for Item in Items %}
                 <li class="Breadcrumb_Item">
                     {% if loop.last %}
