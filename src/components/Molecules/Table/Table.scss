@@ -1,7 +1,6 @@
 .Table {
   display: flex;
   flex-direction: column;
-  border-collapse: collapse;
   width: 100%;
 
   &_Row {
@@ -26,7 +25,7 @@
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    gap: var(--space- 16);
+    gap: var(--space-16);
   }
 
   &_HeadCell {
