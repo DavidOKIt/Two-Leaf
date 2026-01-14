@@ -13,13 +13,13 @@
         {% endif %}
 
         {% if IconHeart %}
-            <span class="Chip_Icon">{{ IconEmbedded('Heart') }}</span>
-            <span class="Chip_IconChecked">{{ IconEmbedded('Heart-filled') }}</span>
+            <span class="Chip_Icon">{{ IconEmbedded('Heart', Size='small') }}</span>
+            <span class="Chip_IconChecked">{{ IconEmbedded('Heart-filled', Size='small') }}</span>
         {% endif %}
 
         {% if IconCheck %}
-            <span class="Chip_Icon">{{ IconEmbedded('Add') }}</span>
-            <span class="Chip_IconChecked">{{ IconEmbedded('Checkmark') }}</span>
+            <span class="Chip_Icon">{{ IconEmbedded('Add', Size = 'small') }}</span>
+            <span class="Chip_IconChecked">{{ IconEmbedded('Checkmark', Size = 'small') }}</span>
         {% endif %}
     </div>
 {% endmacro %}

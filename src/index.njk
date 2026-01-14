@@ -66,6 +66,8 @@
     {{ Logo ("/", "large") }}
     {{ Ranger("preis", 100, 1, 200, "Preis", '€') }}
     {{ Ranger("time", 4, 1, 8, "Ziehzeit", 'min') }}
+    {{ IconEmbedded ('Chevron-up', Size ='small') }}
+    {{ IconEmbedded ('Chevron-up', 'black') }}
 
     {{ Breadcrumb( [ 
         { Label: 'Home', Target: '#' }, 
@@ -98,7 +100,7 @@
     ]}) }}
     <br>
     <div class="testdiv">
-      {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = false, IconCheck = true) }}
+      {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = true, IconCheck = false) }}
       {{ Button('Click Me', 'regular', 'primary')}}
       {{ UneditableRating("Sample Label", FilledStars = 3) }}
       {{ IconGroup(['Home-filled', 'Cart', 'Chevron-up', 'Error', 'Error', 'Error', 'Error','Error', 'Error', 'Error', 'Error','Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error']) }}
