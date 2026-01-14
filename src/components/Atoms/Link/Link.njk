@@ -24,13 +24,13 @@
     <a href="{{ Target }}" class="UtilityLink UtilityLink-{{ Style }} {{ Size }} {{ Weight }}" >
 
         {% if showIconLeft %}
-            {{ IconEmbedded([IconContentLeft])}}
+            {{ IconEmbedded(IconContentLeft)}}
         {% endif %}
 
         <span class="UtilityLink_label">{{ Label }}</span>
 
         {% if showIconRight %}
-            {{ IconEmbedded([IconContentRight])}}
+            {{ IconEmbedded(IconContentRight)}}
         {% endif %}
 
     </a>

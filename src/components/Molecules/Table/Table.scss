@@ -1,3 +1,43 @@
 .Table {
-  display: table;
+  display: flex;
+  flex-direction: column;
+  border-collapse: collapse;
+  width: 100%;
+
+  &_Row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: var(--border-normal) solid var(--color-copper-default);
+  }
+
+  &_Cell {
+    flex: 1;
+    padding: var(--space-10) 0;
+    text-align: left;
+  }
+}
+
+.StaticTable {
+  display: flex;
+  flex-direction: column;
+
+  &_Row {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: var(--space- 16);
+  }
+
+  &_HeadCell {
+    flex: 1;
+    padding: var(--space-10) 0;
+    text-align: left;
+  }
+
+  &_ParagraphCell {
+    flex: 2;
+    padding: var(--space-10) 0;
+    text-align: left;
+  }
 }
