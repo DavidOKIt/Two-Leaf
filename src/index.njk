@@ -34,11 +34,13 @@
 {%- from "./components/Molecules/Breadcrumb/Breadcrumb.njk" import Breadcrumb -%}
 {%- from "./components/Molecules/ProductTile/ProductTile.njk" import ProductTile -%}
 {%- from "./components/Molecules/Table/Table.njk" import Table -%}
+{%- from "./components/Molecules/List/List.njk" import List -%}
 
 {# Organisms  #}
 {# {%- from "./components/Organisms/Slider/Slider.njk" import Slider -%} #}
 {%- from "./components/Organisms/Gallery/Gallery.njk" import Gallery -%}
 {%- from "./components/Organisms/Header/Header.njk" import Header, TopButton -%}
+{%- from "./components/Organisms/AppNav/AppNav.njk" import AppNav -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +130,36 @@
         { Cells: ['Row3Cell1', 'Row3Cell2', 'Row3Cell3']}
       ]) }}
 
+      {{ List ('ul', Items = [
+        'Item 1',
+        'Item 2',
+        'Item 3',
+        'Item 4',
+        'Item 5'
+      ]) }}
+      {{ List ('ol', Items = [
+        'Item',
+        'Item',
+        'Item',
+        'Item',
+        'Item'
+      ]) }}
+      {{ List ('ul', CheckList = true, Items = [
+        'Item',
+        'Item',
+        'Item',
+        'Item',
+        'Item'
+      ]) }}
+      {{ List ('ul', CheckboxList = true, Items = [
+        'Item',
+        'Item',
+        'Item',
+        'Item',
+        'Item'
+      ]) }}
       {{ Divider('secondary') }}
+      {{ ProductTile()}}
     </div>
     <div class="testdiv3">
       {{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage-horizontal', 'cover', figcaption=true, label='Label', loadinglazy=true) }}
@@ -227,6 +258,7 @@
         IconContentRight: null
       }, ButtonContent = 'ENTDECKEN', Position = 'bottom', HeadingContent = 'LEADING TEAS <br> OF THE WORLD', BannerImage = './assets/img/SliderImage2.jpg', ParagraphContent = 'Mehr als 600 Premium Tees & Matcha <br> von den weltbesten Bio-Teegärten.') }}
     </div>
+    {{ AppNav() }}
     {# Scripts #}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -237,5 +269,6 @@
     <script src="/components/Atoms/Dropdown/Dropdown.js"></script>
     <script src="/components/Atoms/Chip/Chip.js"></script>
     <script src="/components/Organisms/Slider/Slider.js"></script>
+    <script src="/components/Organisms/AppNav/AppNav.js"></script>
   </body>
 </html>
