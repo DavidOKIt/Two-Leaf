@@ -33,9 +33,9 @@
 {%- from "./components/Molecules/StaticBanner/StaticBanner.njk" import StaticBanner -%}
 {%- from "./components/Molecules/Breadcrumb/Breadcrumb.njk" import Breadcrumb -%}
 {%- from "./components/Molecules/ProductTile/ProductTile.njk" import ProductTile -%}
-{%- from "./components/Molecules/Table/Table.njk" import Table -%}
+{%- from "./components/Molecules/Table/Table.njk" import Table, StaticTable -%}
 {%- from "./components/Molecules/List/List.njk" import List -%}
-
+hnejhnertjnhe
 {# Organisms  #}
 {# {%- from "./components/Organisms/Slider/Slider.njk" import Slider -%} #}
 {%- from "./components/Organisms/Gallery/Gallery.njk" import Gallery -%}
@@ -66,6 +66,8 @@
     {{ Logo ("/", "large") }}
     {{ Ranger("preis", 100, 1, 200, "Preis", '€') }}
     {{ Ranger("time", 4, 1, 8, "Ziehzeit", 'min') }}
+    {{ IconEmbedded ('Chevron-up', Size ='small') }}
+    {{ IconEmbedded ('Chevron-up', 'black') }}
 
     {{ Breadcrumb( [ 
         { Label: 'Home', Target: '#' }, 
@@ -98,7 +100,7 @@
     ]}) }}
     <br>
     <div class="testdiv">
-      {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = false, IconCheck = true) }}
+      {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = true, IconCheck = false) }}
       {{ Button('Click Me', 'regular', 'primary')}}
       {{ UneditableRating("Sample Label", FilledStars = 3) }}
       {{ IconGroup(['Home-filled', 'Cart', 'Chevron-up', 'Error', 'Error', 'Error', 'Error','Error', 'Error', 'Error', 'Error','Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error']) }}
@@ -123,12 +125,6 @@
       <br>
       <br>
       {{ Downloadfield('Download Item', 'PDF, 4.5MB') }}
-      {{ Table(HeadRows =[  { Cells: ['Head1', 'Head2', 'Head3'] }
-      ], BodyRows = [ 
-        { Cells: ['Row1Cell1', 'Row1Cell2', 'Row1Cell3']}, 
-        { Cells: ['Row2Cell1', 'Row2Cell2', 'Row2Cell3']}, 
-        { Cells: ['Row3Cell1', 'Row3Cell2', 'Row3Cell3']}
-      ]) }}
 
       {{ List ('ul', Items = [
         'Item 1',
@@ -161,6 +157,22 @@
       {{ Divider('secondary') }}
       {{ ProductTile()}}
     </div>
+    {{ Table(HeadRows =[  { Cells: ['Head1', 'Head2', 'Head3', 'Head4'] }
+      ], BodyRows = [ 
+        { Cells: ['Row1Cell1', 'Row1Cell2', 'Row1Cell3', 'Row1Cell3']}, 
+        { Cells: ['Row2Cell1', 'Row2Cell2', 'Row2Cell3', 'Row1Cell3']},
+        { Cells: ['Row2Cell1', 'Row2Cell2', 'Row2Cell3', 'Row1Cell3']},
+        { Cells: ['Row2Cell1', 'Row2Cell2', {Type:'Link', Label: 'Inline Link', Style: 'secondary', Target: '#' }, 'Row1Cell3']},
+        { Cells: ['Row3Cell1', 'Row3Cell2', 'Row3Cell3', 'Row1Cell3']},
+        { Cells: ['Link', {Type:'Link', Label: 'Inline Link', Style: 'secondary', Target: '#' }, 'Row3Cell3', 'Row1Cell3']}
+      ]) }}
+    {{ StaticTable( TableRows = [
+    {Head: 'Head1', Paragraph: 'Paragraph1jabgbabgalgbaiugang <br> luaguagaugiagaag <br> fafafa'}, 
+    {Head: 'Head2', Paragraph: 'Paragraph2'},
+    {Head: 'Head2', Paragraph: 'Paragraph2'},
+    {Head: 'Head2', Paragraph: 'Paragraph2'},
+    {Head: 'Head2', Paragraph: 'Paragraph2'}
+    ]) }}
     <div class="testdiv3">
       {{ Image ('./assets/img/GalleryImage.png', 'Sample Image', 'GalleryImage-horizontal', 'cover', figcaption=true, label='Label', loadinglazy=true) }}
     </div>
@@ -178,7 +190,7 @@
     <p class="light">Probe Text</p>
     <p class="medium">Probe Text 2</p>
     {{ UtilityLink ('Learn More', 'primary', '-sizeXS', 'light') }}
-    {{ UtilityLink ('Learn More', 'secondary', '-sizeS', 'regular') }}
+    {{ UtilityLink ('Learn More', 'secondary', '-sizeS', 'regular', showIconRight = true, IconContentRight ='Chevron-right') }}
     {{ UtilityLink ('Learn More', 'primary', '-sizeS', 'medium', showIconRight =true, IconContentRight = 'Home') }}
 
     <p class="regular">Testen wir den {{ InlineLink ('Ich bin ein Inline Link', 'secondary', '-sizeS', 'regular') }} dadadaa</p>

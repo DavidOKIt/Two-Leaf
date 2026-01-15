@@ -1,22 +1,41 @@
+{%- from "../../Atoms/Link/Link.njk" import InlineLink -%}
+
 {% macro Table(HeadRows, BodyRows) %}
     <table class="Table">
         <thead>
             {% for HeadRow in HeadRows %}
-                <tr>
+                <tr class="Table_Row">
                     {% for Cell in HeadRow.Cells %}
-                        <th>{{ Cell }}</th>
+                        <th class="Table_Cell">{{ Cell }}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </thead>
         <tbody>
             {% for BodyRow in BodyRows %}
-                <tr>
+                <tr class="Table_Row">
                     {% for Cell in BodyRow.Cells %}
-                        <td>{{ Cell }}</td>
+                        <td class="Table_Cell">
+                            {% if Cell.Type == 'Link' %}
+                                {{ InlineLink(Label = Cell.Label, Style = Cell.Style, Size = '-sizeS', Weight = 'regular', Target = Cell.Target) }}
+                            {% else %}
+                                {{ Cell | safe }}
+                            {% endif %}
+                        </td>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </tbody>
+    </table>
+{% endmacro %}
+
+{% macro StaticTable(TableRows) %}
+    <table class="StaticTable">
+        {% for Row in TableRows %}
+            <tr class="StaticTable_Row">
+                <th class="StaticTable_HeadCell">{{ Row.Head | safe }}</th>
+                <td class="StaticTable_ParagraphCell">{{ Row.Paragraph | safe }}</td>
+            </tr>
+        {% endfor %}
     </table>
 {% endmacro %}

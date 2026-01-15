@@ -1,13 +1,35 @@
 .Icon {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2px;
-  width: 24px;
-  height: 24px;
 
   &-white {
     color: var(--color-white);
+  }
+
+  &-small {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &-regular {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-large {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &-extra-large {
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
