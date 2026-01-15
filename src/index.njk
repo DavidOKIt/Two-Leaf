@@ -66,7 +66,11 @@
     {{ Logo ("/", "large") }}
     {{ Ranger("preis", 100, 1, 200, "Preis", '€') }}
     {{ Ranger("time", 4, 1, 8, "Ziehzeit", 'min') }}
-
+    <details>
+      <summary>Mehr Filteroptionen</summary>
+      {{ Ranger("gewicht", 50, 10, 100, "Gewicht", 'g') }}
+      {{ Ranger("menge", 250, 50, 500, "Menge", 'ml') }}
+    </details>
     {{ Breadcrumb( [ 
         { Label: 'Home', Target: '#' }, 
         { Label: 'Category', Target: '#' }, 
