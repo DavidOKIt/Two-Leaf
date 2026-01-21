@@ -1,23 +1,81 @@
 ---
 layout: Layouts/mobile-viewport.njk
-title: Home
+title: Two Leaf 
 showBreadcrumbs: false
+noPadding: true
 ---
 
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
 {%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Molecules/ProductTile/ProductTile.njk' import ProductTile %}
 {%- from '_includes/components/Organisms/Slider/Slider.njk' import Slider %}
 {%- from '_includes/components/Molecules/StaticBanner/StaticBanner.njk' import StaticBanner %}
+{%- from '_includes/components/Organisms/Gallery/Gallery.njk' import Gallery %}
+{%- from '_includes/components/Organisms/Footer/Footer.njk' import Footer -%}
 
-{% set Slide1 %}
-{{ StaticBanner ( BannerImage = './assets/img/SliderImage3.jpg', Position = 'center', HeadingContent = 'EXCLUSIVE OFFERS <br> JUST FOR YOU', ParagraphContent = 'Sign up for our newsletter and get exclusive discounts and updates.') }}
+{# HeroSlider Content #}
+
+{% set HeroSlide1 %}
+{{ StaticBanner ( BannerImage = '/assets/img/SliderImage1.png', Position = 'center', HeadingContent = 'LEADING TEAS <br> OF THE WORLD', ParagraphContent = 'Mehr als 600 Premium Tees & Matcha <br> von den weltbesten Bio-Teegärten.') }}
 {% endset %}
 
-{{ Slider ( SliderType = 'HeroSlider', HeroSlides = [Slide1, Slide1]) }}
-<h1>Welcome to Two Leaf</h1>
-<h1>Welcome to Two Leaf</h1>
-<h1>Welcome to Two Leaf</h1>
-<h1>Welcome to Two Leaf</h1>
-<h1>Welcome to Two Leaf</h1>
-{{ Button()}}
-{{ Button()}}
-{{ Button()}}
+{% set HeroSlide2 %}
+{{ StaticBanner ( BannerImage = '/assets/img/SliderImage4.jpg', Position = 'center', HeadingContent = 'TWO LEAF SPIRIT', ParagraphContent = 'Mit Achtsamkeit auf dem inneren Teeweg.') }}
+{% endset %}
+
+{% set HeroSlide3 %}
+{{ StaticBanner ( BannerImage = '/assets/img/SliderImage3.jpg', Position = 'center', HeadingContent = 'FINEST TEA <br> CERAMICS', ParagraphContent = 'Feinste Teekeramik und Zubehör <br> von renommierten Künstlern und Studios.') }}
+{% endset %}
+
+{% set HeroSlide4 %}
+{{ StaticBanner ( BannerImage = '/assets/img/SliderImage.jpg', Position = 'center', HeadingContent = 'LEADING TEA GARDENS OF THE WORLD', ParagraphContent = 'Mehr als 120 Einzellagen. <br> Über 100 Terroirs in mehr als 20 Ländern.') }}
+{% endset %}
+
+{% set HeroSlide5 %}
+{{ StaticBanner ( BannerImage = '/assets/img/SliderImage2.jpg', Position = 'center', HeadingContent = 'TWO LEAF <br> OUR STORY', ParagraphContent = 'Die Geschichte zweier Tee Liebhaberinnen.') }}
+{% endset %}
+
+{# Product Slider Content #}
+
+{% set ProductSlide1 %}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/SliderImage3.jpg'}, HeadingContent = 'SENCHA') }}
+{% endset %}
+
+{% set ProductSlide2 %}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage4.jpg'}, HeadingContent = 'OOLONG TEE') }}
+{% endset %}
+
+{% set ProductSlide3 %}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage3.jpg'}, HeadingContent = 'WEISSER TEE') }}
+{% endset %}
+
+{% set ProductSlide4 %}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage1.jpg'}, HeadingContent = 'KRÄUTERTEE') }}
+{% endset %}
+
+{% set ProductSlide5 %}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage2.jpg'}, HeadingContent = 'PU ERH TEE') }}
+{% endset %}
+
+{{ Slider ( SliderType = 'HeroSlider', HeroSlides = [HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4, HeroSlide5]) }}
+<div class="mobile-text-flexbox">
+    {{ Heading( Tag = 'h1', Size = '-sizeXXL', Weight = 'bold', Content = 'TWO LEAF')}}
+    {{ Heading( Tag = 'h3', Size = '-sizeL', Weight = 'regular', Content = 'TEE VERBINDET <br> GENERATIONEN')}}
+    {{ Paragraph( Size = '-sizeS', Weight = 'regular', Content = 'Gegründet von zwei Freundinnen aus unterschiedlichen Generationen, bringen wir frischen Schwung und jahrzehntelange Erfahrung zusammen, um euch die Welt des Tees näherzubringen. Bei uns findet ihr sorgfältig ausgewählte Teesorten, die nicht nur schmecken, sondern auch mit Respekt für Menschen und Natur produziert werden. Nachhaltigkeit, fairer Handel und ein bewusster Umgang mit Ressourcen sind für uns nicht nur Werte, sondern Selbstverständnis. <br> <br> Entdeckt euren Lieblings-Tee, erfahrt mehr über unsere Philosophie und erlebt, wie Two Leaves Tradition und moderne Teekultur miteinander verbindet – jederzeit online und direkt über unsere App.')}}
+</div>
+{{ StaticBanner ( BannerImage = '/assets/img/StaticBannerImage1.jpg', Position = 'top', HeadingContent = 'EINKLANG ZWISCHEN TRADITION UND MODERNE', BannerButton = true) }}
+<div class="mobile-text-flexbox">
+    {{ Heading( Tag = 'h1', Size = '-sizeXXL', Weight = 'bold', Content = 'TRENDING TEAS')}}
+    {{ Paragraph( Size = '-sizeS', Weight = 'regular', Content = 'Entdecke die beliebtesten Teesorten des Monats! Von klassischen Favoriten bis hin zu spannenden Neuheiten – diese Tees begeistern unsere Community und bringen frischen Geschmack in jede Tasse.')}}
+</div>
+{{ Slider ( SliderType = 'ProductSlider', ProductSlides = [ProductSlide1, ProductSlide2, ProductSlide3, ProductSlide4, ProductSlide5]) }}
+{{ Gallery(Images = {
+        Image1: { src: '/assets/img/SliderImage3.jpg', alt: 'Alt text 1', label: 'Label1'},
+        Image2: { src: '/assets/img/GalleryImage2.png', alt: 'Alt text 2', label: 'Label2'},
+        Image3: { src: '/assets/img/ProductImage1.jpg', alt: 'Alt text 3', label: 'Label3'},
+        Image4: { src: '/assets/img/SliderImage.jpg', alt: 'Alt text 4', label: 'Label4'},
+        Image5: { src: '/assets/img/GalleryImage.png', alt: 'Alt text 5', label: 'Label5'}
+      }, HeadingContent = "TWO LEAF<br>ART GALLERY", ParagraphContent = "JOURNY OF DISCOVERY") }}
+{{ StaticBanner ( BannerImage = '/assets/img/StaticBannerImage.jpg', Position = 'bottom', HeadingContent = 'VOM FELD BIS IN DEINE TASSE', BannerButton = true) }}
+{{ Footer () }}

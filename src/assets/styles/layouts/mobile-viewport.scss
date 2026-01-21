@@ -9,8 +9,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: var(--color-white);
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  main {
+    padding: 0 var(--space-16);
+
+    &.no-padding {
+      padding: 0;
+    }
   }
 }

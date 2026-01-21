@@ -1,6 +1,6 @@
 .Searchbar {
   &_FocusWrapper {
-    display: inline-flex;
+    display: flex;
     width: auto;
 
     &:focus-within {
@@ -20,8 +20,8 @@
   }
 
   &_Wrapper {
-    display: inline-flex;
-    width: auto;
+    display: flex;
+    width: 100%;
     border: var(--border-normal) solid var(--color-copper-default);
     outline-offset: -2px;
     border-radius: var(--border-radius-normal);
@@ -32,11 +32,11 @@
   }
 
   &_Container {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 280px;
+    width: 100%;
     height: 48px;
     background-color: var(--color-white);
     gap: 0px;
@@ -88,7 +88,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
+    min-width: 48px;
     height: 48px;
     border: var(--border-normal) transparent;
     background: var(--color-white);
@@ -111,10 +111,9 @@
   }
 
   &_Label {
-    display: inline-flex;
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 268px;
   }
 }

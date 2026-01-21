@@ -1,0 +1,8 @@
+.mobile-text-flexbox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-8);
+  padding: var(--space-32) var(--space-16);
+}

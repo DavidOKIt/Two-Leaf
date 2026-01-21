@@ -7,7 +7,7 @@
 {%- from "../../Atoms/Icon/Icon.njk" import IconEmbedded %}
 
 {% macro Footer(Contents = null) %}
-    <div class="Footer">
+    <footer class="Footer">
         {% if Contents%}
             {% for Content in Contents %}
                 <details class="Footer_Details">
@@ -62,7 +62,7 @@
                 </div>
             </details>
         {% endif %}
-    </div>
+    </footer>
 {% endmacro %}
 
 {% macro FooterButton() %}

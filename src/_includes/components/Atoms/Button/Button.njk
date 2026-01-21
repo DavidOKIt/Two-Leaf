@@ -1,6 +1,6 @@
 {%- from "../Icon/Icon.njk" import IconEmbedded -%}
 
-{% macro Button(Label, Size, Style, Outline, showIconLeft = false, IconContentLeft, showIconRight = false, IconContentRight) %}
+{% macro Button(Label, Size, Style, Outline, showIconLeft = false, IconContentLeft, showIconRight = false, IconContentRight, fullWidth = false, disabled = false, href = null, target = null) %}
     {% set IconOnly = showIconLeft and not Label and not showIconRight %}
     {% set default = {
     Label: 'Label',
@@ -10,7 +10,11 @@
     showIconLeft: false,
     IconContentLeft: null,
     showIconRight: false,
-    IconContentRight: null
+    IconContentRight: null,
+    fullWidth: false,
+    disabled: false,
+    href: null,
+    target: null
   }%}
     {% set Label = Label or default.Label %}
     {% set Size = Size or default.Size %}
@@ -20,8 +24,21 @@
     {% set IconContentLeft = IconContentLeft or default.IconContentLeft %}
     {% set showIconRight = showIconRight or default.showIconRight %}
     {% set IconContentRight = IconContentRight or default.IconContentRight %}
+    {% set fullWidth = fullWidth or default.fullWidth %}
+    {% set disabled = disabled or default.disabled %}
+    {% set href = href or default.href %}
+    {% set target = target or default.target %}
 
-    <button type="button" class="Button Button-{{ Size }} Button-{{ Style }} {{ Outline}} {% if IconOnly %} Button-onlyIcon{% endif %} medium">
+    {% set classes %}
+    Button Button-{{ Size }} Button-{{ Style }}
+    {{ Outline }} {% if IconOnly %} Button-onlyIcon {% endif %} medium {% if fullWidth %} Button-fullWidth {% endif %}
+    {% endset %}
+
+    {% if href %}
+        <a href="{{ href }}" class="{{ classes }}" {% if target %}target="{{ target }}"{% endif %} {% if disabled %}aria-disabled="true" tabindex="-1"{% endif %}>
+    {% else %}
+        <button type="button" class="{{ classes }}" {% if disabled %}disabled{% endif %}>
+    {% endif %}
         {% if showIconLeft %}
             {{ IconEmbedded(IconContentLeft)}}
         {% endif %}
@@ -31,5 +48,9 @@
         {% if showIconRight %}
             {{ IconEmbedded(IconContentRight)}}
         {% endif %}
-    </button>
+        {% if href %}
+        </a>
+    {% else %}
+        </button>
+    {% endif %}
 {% endmacro %}

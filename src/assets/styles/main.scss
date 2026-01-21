@@ -6,6 +6,12 @@
 // Layouts
 @use "layouts/mobile-viewport.scss";
 
+// Pages
+@use "pages/home.scss";
+@use "pages/shop.scss";
+@use "pages/cart.scss";
+@use "pages/profile.scss";
+
 // Atoms
 @use "../../_includes/components/Atoms/Icon/Icon.scss";
 @use "../../_includes/components/Atoms/Button/Button.scss";
@@ -54,7 +60,7 @@
 }
 
 body {
-  background-color: var(--color-bgwhite);
+  background-color: var(--color-bggrey);
   font-family: Montserrat, sans-serif;
   font-size: var(--font-size-14);
 }
@@ -66,10 +72,4 @@ img {
 
 html {
   scroll-behavior: smooth;
-}
-
-.mobile-flexbox {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-16);
 }

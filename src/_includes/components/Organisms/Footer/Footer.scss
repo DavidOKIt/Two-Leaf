@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--color-bgfooter);
+  padding: var(--space-16);
 
   &_Details {
     &[open] {

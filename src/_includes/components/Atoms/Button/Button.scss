@@ -6,12 +6,18 @@
   border-radius: var(--border-radius-normal);
   font-family: inherit;
   font-size: var(--font-size-14);
+  pointer-events: auto;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-8);
   cursor: pointer;
+
+  &-fullWidth {
+    width: 100%;
+  }
 
   &:focus-visible {
     outline: var(--border-focus) solid var(--color-focus);
@@ -22,9 +28,11 @@
     outline: none;
   }
 
-  &:disabled {
-    opacity: 0.3;
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.4;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &-primary {

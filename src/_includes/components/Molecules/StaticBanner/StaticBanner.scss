@@ -35,10 +35,10 @@
   &_Content {
     display: flex;
     flex-direction: column;
-    // padding: 50px var(--space-16);
     color: var(--color-white);
     text-align: center;
     gap: var(--space-16);
+    pointer-events: none;
   }
 
   &_ButtonContainer {

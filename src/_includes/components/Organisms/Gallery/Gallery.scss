@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-16);
+  padding: var(--space-16) 0;
 
   &_Container {
     grid-column: 1/13;
@@ -33,5 +34,25 @@
 
   &-right {
     grid-column: 7 / 13;
+  }
+}
+
+.GalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+
+  &_Item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    object-position: 30% 70%;
+  }
+
+  &_Label {
+    position: absolute;
+    bottom: var(--space-16);
+    left: var(--space-16);
+    color: var(--color-white);
   }
 }

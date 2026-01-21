@@ -22,3 +22,22 @@
         <div class="Gallery_Container">{{ Image (Images.Image5.src, Images.Image5.alt, 'GalleryImage-horizontal', Images.Image5.fit or 'cover', figcaption=true, Images.Image5.label, loadinglazy=true) }}</div>
     </div>
 {% endmacro %}
+
+{% macro GalleryGrid(items) %}
+    <div class="GalleryGrid">
+        {% for item in items %}
+            <div class="GalleryGrid_Item">
+                {{ Image(
+          src = item.src,
+          alt = item.alt,
+          size = 'GalleryGrid_Image',
+          fit = 'cover',
+          figcaption = false,
+          label = '',
+          loadingLazy = true
+        ) }}
+                <span class="GalleryGrid_Label -sizeL bold">{{ item.label }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
