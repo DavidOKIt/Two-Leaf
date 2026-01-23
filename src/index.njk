@@ -39,23 +39,23 @@ noPadding: true
 {# Product Slider Content #}
 
 {% set ProductSlide1 %}
-{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/SliderImage3.jpg'}, HeadingContent = 'SENCHA') }}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/SliderImage3.jpg'}, HeadingContent = 'SENCHA', TileButton = {href: '/shop-pdp/'}) }}
 {% endset %}
 
 {% set ProductSlide2 %}
-{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage4.jpg'}, HeadingContent = 'OOLONG TEE') }}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage4.jpg'}, HeadingContent = 'OOLONG TEE', TileButton = {href: '/shop-pdp/'}) }}
 {% endset %}
 
 {% set ProductSlide3 %}
-{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage3.jpg'}, HeadingContent = 'WEISSER TEE') }}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage3.jpg'}, HeadingContent = 'WEISSER TEE', TileButton = {href: '/shop-pdp/'}) }}
 {% endset %}
 
 {% set ProductSlide4 %}
-{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage1.jpg'}, HeadingContent = 'KRÄUTERTEE') }}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage1.jpg'}, HeadingContent = 'KRÄUTERTEE', TileButton = {href: '/shop-pdp/'}) }}
 {% endset %}
 
 {% set ProductSlide5 %}
-{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage2.jpg'}, HeadingContent = 'PU ERH TEE') }}
+{{ ProductTile ( TileLinkOn = true,  TileImage = {src :'/assets/img/ProductImage2.jpg'}, HeadingContent = 'PU ERH TEE', TileButton = {href: '/shop-pdp/'}) }}
 {% endset %}
 
 {{ Slider ( SliderType = 'HeroSlider', HeroSlides = [HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4, HeroSlide5]) }}

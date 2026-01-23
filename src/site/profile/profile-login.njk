@@ -1,0 +1,28 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /profile-login/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Profil
+      Target: /profile/
+    - Label: Login
+---
+
+{%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Inputfield/Inputfield.njk' import Inputfield %}
+{%- from '_includes/components/Atoms/Checkbox/Checkbox.njk' import Checkbox %}
+
+<div class="profile-login">
+  <div class="profile-login_content">
+    {{ Heading (Tag = 'h1', Size = '-sizeL', Weight = 'bold', Content = 'Login') }}
+    {{ Inputfield (Type = 'email', Placeholder = 'E-Mail-Adresse*') }}
+    {{ Inputfield (Type = 'password', Placeholder = 'Passwort*', IconRight = true, IconRightContent = 'ViewOff') }}
+    {{ Checkbox ( Label = 'Angemeldet bleiben', ID = 'stay-logged-in') }}
+    <div class="profile-login_buttons">
+      {{ Button (fullWidth = true, href = '/profile-dashboard', Label = 'Anmelden') }}
+      {{ Button (fullWidth = true, href = '/profile-register', Style = 'tertiary', Outline = true, Label = 'Noch kein Konto?') }}
+    </div>
+  </div>
+</div>

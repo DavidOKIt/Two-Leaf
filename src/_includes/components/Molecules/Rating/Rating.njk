@@ -1,18 +1,17 @@
 {%-from "../../Atoms/Icon/Icon.njk" import IconEmbedded %}
 
-{% macro UneditableRating(Label, FilledStars = 4) %}
+{% macro UneditableRating(Label = null, FilledStars = '4', Size = 'large') %}
 
     <div class="UneditableRating">
         <div class="UneditableRating_Stars">
             {% for star in range (1, 6)%}
                 {% if star <= FilledStars %}
-                    {{ IconEmbedded("Star-filled") }}
+                    {{ IconEmbedded("Star-filled", Size = Size) }}
                 {% else %}
-                    {{ IconEmbedded("Star") }}
+                    {{ IconEmbedded("Star", Size = Size) }}
                 {% endif %}
             {% endfor %}
         </div>
-        {{ IconEmbedded("Subtract") }}
         <span class="UneditableRating_Label">{{ Label }}</span>
     </div>
 {% endmacro %}

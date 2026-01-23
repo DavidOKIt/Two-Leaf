@@ -10,15 +10,33 @@ breadcrumbs:
 ---
 
 {%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
-{%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
-{%- from '_includes/components/Atoms/Link/Link.njk' import UtilityLink, InlineLink %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Inputfield/Inputfield.njk' import Inputfield %}
+{%- from '_includes/components/Atoms/Checkbox/Checkbox.njk' import Checkbox %}
+{%- from '_includes/components/Atoms/Dropdown/Dropdown.njk' import Dropdown %}
 
-<div class="profile">
-  <div class="profile_buttons">
-    {{ Button (fullWidth = true, Label = 'Einloggen') }}
+<div class="profile-register">
+  <div class="profile-register_content">
+    {{ Heading (Tag = 'h1', Size = '-sizeL', Weight = 'bold', Content = 'Benutzerkonto anlegen') }}
+    <div class="profile-register_inputs">
+      {{ Inputfield (Type = 'email', Placeholder = 'E-Mail-Adresse*') }}
+      {{ Dropdown ('Land', 'Länderwahl',{ DropdownItems: [
+        { value: 'option1', label: 'Deutschland ' },
+        { value: 'option2', label: 'Österreich' },
+        { value: 'option3', label: 'Schweiz' },
+        { value: 'option4', label: 'Frankreich' },
+        { value: 'option5', label: 'Italien' },
+        { value: 'option6', label: 'Belgien' }
+    ]}) }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Vorname*') }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Nachname*') }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Adresse*', IconRight = true, IconRightContent = 'Search') }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Wohnung, Zimmer, Suite') }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Postleitzahl*') }}
+      {{ Inputfield (Type = 'text', Placeholder = 'Stadt*') }}
+      {{ Inputfield (Type = 'password', Placeholder = 'Passwort*', IconRight = true, IconRightContent = 'ViewOff') }}
+    </div>
+    {{ Button (fullWidth = true, href = '/profile-login', Label = 'Neues Konto erstellen') }}
+    <span class="profile-register-paddingbottom">{{ Checkbox ( Label = 'Neuigkeiten und Angebote erhalten') }}</span>
   </div>
-  {{ Paragraph(Content = 'Noch kein Konto?', Weight = 'medium') }}
-  {{ Button (href = '/profile-register/', fullWidth = true, Label = ' Registrieren', Outline = true, Style = 'tertiary', Outline = true) }}
-  {{ UtilityLink() }}
-  {{ InlineLink() }}
 </div>

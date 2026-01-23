@@ -1,5 +1,10 @@
-{%macro Paragraph( Size, Weight, Content)%}
+{% macro Paragraph( Size = '-sizeS', Weight = 'regular', Content = null) %}
+
     <p class="Paragraph {{ Size }} {{ Weight }}">
-        {{ Content | safe }}
+        {% if Content %}
+            {{ Content | safe }}
+        {% elif caller %}
+            {{ caller() }}
+        {% endif %}
     </p>
 {% endmacro %}

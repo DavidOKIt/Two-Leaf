@@ -1,0 +1,73 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /shop-filter/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Shop
+      Target: /shop/
+    - Label: Filter
+---
+
+{%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Chip/Chip.njk' import Chip %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Checkbox/Checkbox.njk' import Checkbox %}
+{%- from '_includes/components/Atoms/Radio/Radio.njk' import Radio %}
+{%- from '_includes/components/Atoms/Toggle/Toggle.njk' import Toggle %}
+{%- from '_includes/components/Atoms/Ranger/Ranger.njk' import Ranger %}
+{%- from '_includes/components/Atoms/Divider/Divider.njk' import Divider %}
+{%- from '_includes/components/Molecules/Rating/Rating.njk' import UneditableRating %}
+
+<div class="shop-filter">
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Sortieren Nach') }}
+        {{ Radio (Label = 'Neuheiten', ID = 'Neuheiten', Name ='sort by')}}
+        {{ Radio (Label = 'Angebote', ID = 'Angebote', Name ='sort by')}}
+        {{ Radio (Label = 'Verfügbarkeit', ID = 'Verfügbarkeit', Name ='sort by')}}
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Teefamilien') }}
+        <div class="shop-filter_chipbox">
+            {{Chip(Style = 'primary', Label = 'Green', IconCheck = true)}}
+            {{Chip(Style = 'secondary', Label = 'Herbal', IconCheck = true)}}
+            {{Chip(Style = 'tertiary', Label = 'Black', IconCheck = true)}}
+        </div>
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Teesorten') }}
+        {{ Checkbox (Label = 'Matcha', ID = 'Matcha', Name ='Teesorten')}}
+        {{ Checkbox (Label = 'Olong', ID = 'Olong', Name ='Teesorten')}}
+        {{ Checkbox (Label = 'Weiß', ID = 'Weiß', Name ='Teesorten')}}
+        {{ Checkbox (Label = 'Pu Erh', ID = 'Pu Erh', Name ='Teesorten')}}
+        {{ Checkbox (Label = 'Funktionstees', ID = 'Funktionstees', Name ='Teesorten')}}
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Verpackungsgröße') }}
+        {{ Checkbox (Label = '50g', ID = '50g', Name ='Verpackungsgröße')}}
+        {{ Checkbox (Label = '100g', ID = '100g', Name ='Verpackungsgröße')}}
+        {{ Checkbox (Label = '250g', ID = '250g', Name ='Verpackungsgröße')}}
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Inhalte') }}
+        {{ Toggle (Label = 'Vegan', ID = 'Vegan', Name ='Inhalte')}}
+        {{ Toggle (Label = 'Koffein', ID = 'Koffein', Name ='Inhalte')}}
+        {{ Toggle (Label = 'Laktose', ID = 'Laktose', Name ='Inhalte')}}
+        {{ Toggle (Label = 'Gluten', ID = 'Gluten', Name ='Inhalte')}}
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Ranger(ID ='timeranger', Value = '5', Min = '2', Max = '8', LabelLeft = 'Ziehzeit', Unit = 'min') }}
+        {{ Ranger(ID ='priceranger', Value = '25', Min = '10', Max = '100', LabelLeft = 'Preis', Unit = '€') }}
+        {{ Divider() }}
+    </div>
+    <div class="shop-filter_contentblock">
+        {{ Heading (Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Bewertung') }}
+        {{ UneditableRating (FilledStars = '3')}}
+    </div>
+    {{ Button(href = '/shop/', Label = 'SUCHERERGEBNISSE ANZEIGEN', fullWidth = true, showIconRight = true, IconContentRight = 'Search') }}
+</div>

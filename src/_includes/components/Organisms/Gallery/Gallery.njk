@@ -26,8 +26,9 @@
 {% macro GalleryGrid(items) %}
     <div class="GalleryGrid">
         {% for item in items %}
-            <div class="GalleryGrid_Item">
-                {{ Image(
+            <a href="{{ item.target }}">
+                <div class="GalleryGrid_Item">
+                    {{ Image(
           src = item.src,
           alt = item.alt,
           size = 'GalleryGrid_Image',
@@ -36,8 +37,9 @@
           label = '',
           loadingLazy = true
         ) }}
-                <span class="GalleryGrid_Label -sizeL bold">{{ item.label }}</span>
-            </div>
+                    <span class="GalleryGrid_Label -sizeL bold">{{ item.label }}</span>
+                </div>
+            </a>
         {% endfor %}
     </div>
 {% endmacro %}

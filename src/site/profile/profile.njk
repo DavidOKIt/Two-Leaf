@@ -11,9 +11,9 @@ breadcrumbs:
 {%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
 
 <div class="profile">
-  <div class="profile_buttons">
-    {{ Button (fullWidth = true, Label = 'Einloggen') }}
+  <div class="profile_content">
+    {{ Button (fullWidth = true, href = '/profile-login', Label = 'Einloggen') }}
+    {{ Paragraph(Content = 'Noch kein Konto?', Weight = 'medium') }}
+    {{ Button ( fullWidth = true, href = '/profile-register', Label = ' Registrieren', Outline = true, Style = 'tertiary') }}
   </div>
-  {{ Paragraph(Content = 'Noch kein Konto?', Weight = 'medium') }}
-  {{ Button (href = '/profile-register', fullWidth = true, Label = ' Registrieren', Outline = true, Style = 'tertiary', Outline = true) }}
 </div>

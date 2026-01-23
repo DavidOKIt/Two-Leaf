@@ -1,0 +1,57 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /shop-pdp/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Shop
+      Target: /shop/
+    - Label: Produkt
+---
+
+{%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Link/Link.njk' import UtilityLink %}
+{%- from '_includes/components/Atoms/Chip/Chip.njk' import Chip %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
+{%- from '_includes/components/Atoms/Image/Image.njk' import Image %}
+{%- from '_includes/components/Molecules/Rating/Rating.njk' import UneditableRating %}
+{%- from '_includes/components/Molecules/IconGroup/IconGroup.njk' import IconGroup %}
+{%- from '_includes/components/Molecules/Downloadfield/Downloadfield.njk' import Downloadfield %}
+{%- from '_includes/components/Molecules/Table/Table.njk' import StaticTable %}
+
+<div class="pdp">
+    <div class="pdp_content">
+        <div class="pdp_block">
+            {{ Paragraph ( Size = '-sizeS', Content= 'Label' ) }}
+            <div class="pdp_spacebetween">
+                {{ Heading ( Tag ="h1", Size = '-sizeXL', Content="Produktname" ) }}
+                {{ Heading ( Tag ="h2", Size = '-sizeXL', Content="11,90 €" ) }}
+            </div>
+            {{ Image (src = "../assets/img/ProductImage2.jpg", alt = "Produktbild", size = 'GalleryImage-horizontal', fit = 'cover') }}
+            <div class="pdp_spacebetween">
+                {{ UneditableRating (FilledStars = '4', Size = 'regular') }}
+                {{ Chip ( Style = 'primary', Label = 'Favorit', IconHeart = true ) }}
+            </div>
+            {{ Paragraph( Content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.') }}
+        </div>
+        {{ StaticTable ( TableRows = [  
+        {Head: 'Teefarm', Paragraph: 'At vero eos et accusam duo.'},
+        {Head: 'Teefarm', Paragraph: 'At vero eos et accusam duo.'},
+        {Head: 'Teefarm', Paragraph: 'At vero eos et accusam duo.'},
+        {Head: 'Teefarm', Paragraph: 'At vero eos et accusam duo.'}
+        ]) }}
+        <div class="pdp_block">
+            {{ UtilityLink(Weight = 'bold') }}
+            {{ IconGroup ( Icons = [ 'Info', 'Help', 'Globe', 'Contact' ]) }}
+        </div>
+        <div class="pdp_buttonwrapper">
+            {{ Paragraph (Size = '-sizeXS', Content = 'Lieferung 1 - 3 Werktage') }}
+            {{ Button (Label = 'In den Warenkorb', href = '/cart') }}
+            {{ Paragraph (Size = '-sizeXS', Content = 'inkl. MwSt., exkl. Versandkosten  |  ID 7386 - 400€ / 1kg ') }}
+        </div>
+        <div class="pdp_end">
+            {{ Downloadfield (Title = 'Tea Sheet - Product Name', Details = 'PDF, 4.5MB') }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /cart-checkout/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Warenkorb
+      Target: /cart/
+    - Label: Checkout
+---
+
+{%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Link/Link.njk' import InlineLink, UtilityLink %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
+{%- from '_includes/components/Atoms/Checkbox/Checkbox.njk' import Checkbox %}
+{%- from '_includes/components/Atoms/Radio/Radio.njk' import Radio %}
+{%- from '_includes/components/Atoms/Divider/Divider.njk' import Divider %}
+{%- from '_includes/components/Atoms/Inputfield/Inputfield.njk' import Inputfield %}
+{%- from '_includes/components/Atoms/Dropdown/Dropdown.njk' import Dropdown %}
+{%- from '_includes/components/Molecules/Table/Table.njk' import Table, StaticTable %}
+
+<div class="cart-checkout">
+    <div class="cart-checkout_content">
+        <div class="cart-checkout_block">
+            {{ Heading ( Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Express Checkout' ) }}
+            {{ Button(fullWidth = true, Style = 'tertiary', Label = 'Kreditkarte', showIconRight = true, IconContentRight = 'Payment') }}
+            <div class="cart-checkout_block-inner">
+                {{ Button(fullWidth = true, Style = 'tertiary', Label = 'Paypal', showIconRight = true, IconContentRight = 'Payment') }}
+                {{ Button(fullWidth = true, Style = 'tertiary', Label = 'Google Pay', showIconRight = true, IconContentRight = 'Payment') }}
+            </div>
+        </div>
+        <div class="cart-checkout_block">
+            {{ Heading ( Tag = 'h3', Size = '-sizeM', Weight = 'medium', Content = 'Checkout' ) }}
+            <div class="cart-checkout_contact">
+                {{ Heading ( Tag = 'h2', Size = '-sizeL', Weight = 'bold', Content = 'Kontakt' ) }}
+                {{ UtilityLink ( Label = 'Anmelden', href = '/profile-login' ) }}
+            </div>
+            {{ Inputfield (Type = 'email', Placeholder = 'E-Mail-Adresse*') }}
+            {{ Checkbox (ID = 'newsletter', Label = 'Neuigkeiten und Angebote erhalten')}}
+        </div>
+        <div class="cart-checkout_block">
+            <div class="cart-checkout_contact">
+                {{ Heading ( Tag = 'h2', Size = '-sizeL', Weight = 'bold', Content = 'Lieferung' ) }}
+            </div>
+            {{ Dropdown ('Land', 'Länderwahl',{ DropdownItems: [
+        { value: 'option1', label: 'Deutschland ' },
+        { value: 'option2', label: 'Österreich' },
+        { value: 'option3', label: 'Schweiz' },
+        { value: 'option4', label: 'Frankreich' },
+        { value: 'option5', label: 'Italien' },
+        { value: 'option6', label: 'Belgien' }
+    ]}) }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Vorname*') }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Nachname*') }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Adresse*', IconRight = true, IconRightContent = 'Search') }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Wohnung, Zimmer, Suite') }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Postleitzahl*') }}
+            {{ Inputfield (Type = 'text', Placeholder = 'Stadt*') }}
+        </div>
+        <div class="cart-checkout_block">
+            <div class="cart-checkout_contact">
+                {{ Heading ( Tag = 'h2', Size = '-sizeL', Weight = 'bold', Content = 'Zahlung' ) }}
+            </div>
+            <div class="cart-checkout-background">
+                {{ Radio (ID = 'paymentcard', Name = 'payment', Label = 'Kreditkarte')}}
+                {{ Inputfield (Type = 'text', Placeholder = 'Kartennummer*') }}
+                {{ Inputfield (Type = 'text', Placeholder = 'Gültig bis (MM/JJ)*') }}
+                {{ Inputfield (Type = 'text', Placeholder = 'Sicherheitscode*', IconRight = true, IconRightContent = 'Help') }}
+                {{ Inputfield (Type = 'text', Placeholder = 'Name des Karteninhabers*') }}
+                {{ Checkbox (ID = 'lieferadresse', Label = 'Lieferadresse als Rechnungsadresse verwenden')}}
+            </div>
+            <div class="cart-checkout-background">
+                {{ Radio (ID = 'paymentpaypal', Name = 'payment', Label = 'PayPal')}}
+            </div>
+        </div>
+        <div class="cart-checkout_block">
+            <div class="cart-checkout_contact">
+                {{ Heading ( Tag = 'h2', Size = '-sizeL', Weight = 'bold', Content = 'Bestellübersicht' ) }}
+            </div>
+            <div class="cart-checkout_rabatt">
+                <div class="cart-checkout_rabatt-field">
+                    {{ Inputfield (Type = 'email', Placeholder = 'Rabattcode') }}
+                </div>
+                <div class="cart-checkout_rabatt-button">
+                    {{ Button(fullWidth = true, Label = 'Anwenden') }}
+                </div>
+            </div>
+            <div class="cart-checkout_contact">
+                {{ Paragraph ( Size = '-sizeS', Weight = 'medium', Content = 'Zwischensumme') }}
+                {{ Paragraph ( Size = '-sizeS', Weight = 'medium', Content = '30,80€') }}
+            </div>
+            <div class="cart-checkout_kleingedrucktes">
+                {{ Paragraph ( Size = '-sizeXS', Weight = 'medium', Content = '(3 Artikel)') }}
+                {{ Paragraph ( Size = '-sizeXS', Weight = 'medium', Content = 'inkl. MwSt. und Versandkosten') }}
+            </div>
+        </div>
+        {{ Checkbox (ID = 'conditions', Label = 'Ich stimme den Verkaufsbedingungen und den Datenschutzbestimmungen zu.') }}
+        {{ Button (href = '/cart-orderd', Label = 'JETZT KAUFEN') }}
+        <div class="cart-checkout_contact">
+            {{ Paragraph ( Size = '-sizeS', Weight = 'medium', Content = 'Zwischensumme') }}
+            {{ Paragraph ( Size = '-sizeS', Weight = 'medium', Content = '30,80€') }}
+        </div>
+        <div class="cart-checkout_end">
+            {{ InlineLink ( Style = 'primary',  Size = '-sizeS', Label = 'Widerrufsrecht', href = '/refund-policy' ) }}
+            {{ InlineLink ( Style = 'primary',  Size = '-sizeS', Label = 'Datenschutz', href = '/privacy-policy' ) }}
+            {{ InlineLink ( Style = 'primary',  Size = '-sizeS', Label = 'AGB', href = '/refund-policy' ) }}
+            {{ InlineLink ( Style = 'primary',  Size = '-sizeS', Label = 'Kontakt', href = '/contact' ) }}
+        </div>
+    </div>
+</div>

@@ -1,12 +1,69 @@
 .profile {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: var(--space-16);
-  text-align: center;
   height: calc(100vh - 208px);
+
+  &_content {
+    display: flex;
+    width: 328px;
+    flex-direction: column;
+    gap: var(--space-16);
+    text-align: center;
+  }
+}
+
+.profile-dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-16) 0;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.profile-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 208px);
+
+  &_content {
+    display: flex;
+    width: 328px;
+    flex-direction: column;
+    gap: var(--space-16);
+    text-align: center;
+  }
 
   &_buttons {
     display: flex;
+    gap: var(--space-16);
+  }
+}
+
+.profile-register {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 208px);
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  &_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  &-paddingbottom {
+    padding-bottom: var(--space-16);
   }
 }

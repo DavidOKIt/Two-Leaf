@@ -4,3 +4,55 @@
   gap: var(--space-16);
   padding-bottom: var(--space-16);
 }
+
+.shop-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-16) 0;
+
+  &_contentblock {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  &_chipbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+}
+
+.pdp {
+  display: flex;
+  justify-content: center;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-top: var(--space-16);
+  }
+
+  &_block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  &_spacebetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_buttonwrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_end {
+    padding-bottom: var(--space-16);
+  }
+}

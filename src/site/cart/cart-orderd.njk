@@ -1,0 +1,55 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /cart-orderd/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Warenkorb
+      Target: /cart/
+    - Label: Checkout
+      Target: /cart-checkout/
+    - Label: Bestellbestätigung
+    
+---
+
+{%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Link/Link.njk' import InlineLink %}
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Paragraph/Paragraph.njk' import Paragraph %}
+{%- from '_includes/components/Molecules/Table/Table.njk' import Table, StaticTable %}
+
+<div class="cart-orderd">
+    <div class="cart-orderd_content">
+        <div class="cart-orderd_text">
+            {{ Heading (Tag = 'h1', Size = '-sizeXXL', Content = 'Vielen Dank für <br> Ihre Bestellung !') }}
+            {% call Paragraph() %}
+        Ihre Bestellung war erfolgreich. Eine Bestätigungsnachricht wurde an{{ InlineLink ( Label = 'example@mail.com', href = '/')}}gesendet.
+    {% endcall %}
+        </div>
+        <div class="cart-orderd_table">
+            {{ Table (
+        HeadRows = [
+            { Cells: [ 'Produkt', 'Anzahl', 'Preis' ] }
+        ],
+        BodyRows = [
+            { Cells: [ 'Grüntee', '3', '8,00 € /kg' ] },
+            { Cells: [ 'Schwarztee', '4', '12,00 € /kg' ] }
+        ]
+    ) }}
+            {{ Table (
+        HeadRows = [
+            { Cells: [ 'Gesamtbetrag', '', '20,00€' ] }
+        ]
+    ) }}
+        </div>
+        {{ StaticTable (
+        TableRows = [
+            { Head: 'Bestellnummer:', Paragraph: '872F622U9' },
+            { Head: 'Bestelldatum:', Paragraph: '01.01.2024' },
+            { Head: 'Zahlungsart:', Paragraph: 'PayPal' },
+            { Head: 'Versandart:', Paragraph: 'Standardversand' }
+        ]
+    ) }}
+        {{ Button(fullWidth = true, Label = 'WEITER SHOPPEN', showIconRight = true, IconContentRight = 'ArrowRight', href = '/shop', disabled = false) }}
+    </div>
+</div>

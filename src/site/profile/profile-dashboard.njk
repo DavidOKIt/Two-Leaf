@@ -1,0 +1,54 @@
+---
+layout: Layouts/responsive.njk
+title: Two Leaf 
+permalink: /profile-dashboard/
+showBreadcrumbs: true
+breadcrumbs:
+    - Label: Profil
+      Target: /profile/
+    - Label: Login
+      Target: /profile-login/
+    - Label: Mein Bereich
+---
+
+{%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
+{%- from '_includes/components/Atoms/Divider/Divider.njk' import Divider %}
+{%- from '_includes/components/Atoms/Toggle/Toggle.njk' import Toggle %}
+{%- from '_includes/components/Molecules/MenuItem/MenuItem.njk' import MenuItem %}
+
+<div class="profile-dashboard">
+  <div class="profile-dashboard_content">
+    {{ Heading (Tag = 'h1', Size = '-sizeS', Weight = 'bold', Content = 'Konto') }}
+    {{ MenuItem ( { Settings: [
+        { Text: 'Favoriten', Icon: 'Stars', Weight: 'medium'},
+        { Text: 'Wunschliste', Icon: 'Heart', Weight: 'medium'},
+        { Text: 'Meine Bewertungen', Icon: 'Star', Weight: 'medium'},
+        { Text: 'Zahlungsart', Icon: 'Payment', Weight: 'medium'}
+    ]})}}
+    {{ Divider() }}
+    {{ Heading (Tag = 'h1', Size = '-sizeS', Weight = 'bold', Content = 'App') }}
+    {{ MenuItem ( { Settings: [
+        { Text: 'Einstellungen', Icon: 'Settings', Weight: 'medium'},
+        { Text: 'Benachrichtigungen', Icon: 'Notification', Weight: 'medium'},
+        { Text: 'Videos und Animationen', Icon: 'Accessibility', Weight: 'medium'}
+    ]})}}
+    {{ Divider() }}
+    {{ Heading (Tag = 'h1', Size = '-sizeS', Weight = 'bold', Content = 'Unternehmen') }}
+    {{ MenuItem ( { Settings: [
+        { Text: 'Jobs', Icon: 'Search', Weight: 'medium'},
+        { Text: 'Kooperationen', Icon: 'Heart', Weight: 'medium'},
+        { Text: 'Umweltschutz', Icon: 'Sun', Weight: 'medium'},
+        { Text: 'Business', Icon: 'Chart', Weight: 'medium'},
+        { Text: 'Verbinden', Icon: 'Globe', Weight: 'medium'}
+    ]})}}
+    {{ Divider() }}
+    {{ Heading (Tag = 'h1', Size = '-sizeS', Weight = 'bold', Content = 'Support') }}
+    {{ MenuItem ( { Settings: [
+        { Text: 'Kontakt', Icon: 'Contact', Weight: 'medium'},
+        { Text: 'Dokumente', Icon: 'File', Weight: 'medium'},
+        { Text: 'Info', Icon: 'Info', Weight: 'medium'},
+        { Text: 'Hilfe', Icon: 'Help', Weight: 'medium'},
+        { Text: 'Abmelden', Icon: 'Sign-in', Weight: 'medium'}
+    ]})}}
+  </div>
+</div>
