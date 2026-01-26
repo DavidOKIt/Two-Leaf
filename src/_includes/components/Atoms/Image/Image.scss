@@ -8,7 +8,6 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--border-radius-normal);
 
   &_Label {
     position: absolute;
@@ -57,5 +56,9 @@
 
   &-fill {
     object-fit: fill;
+  }
+
+  &-borderRadius {
+    border-radius: var(--border-radius-normal);
   }
 }

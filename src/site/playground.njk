@@ -110,8 +110,6 @@ permalink: /playground/
       {{ Chip('Label', 'secondary', IconLeft = false, IconRight = false, IconHeart = true, IconCheck = false) }}
       {{ Button('Click Me', 'regular', 'primary')}}
       {{ UneditableRating("Sample Label", FilledStars = 3) }}
-      {{ IconGroup(['Home-filled', 'Cart', 'Chevron-up', 'Error', 'Error', 'Error', 'Error','Error', 'Error', 'Error', 'Error','Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error' , 'Error']) }}
-      {{ IconGroup(['Home-filled', 'Cart', 'Chevron-up', 'Error']) }}
       {% call ButtonGroup() %}
       {{ Button('Button', 'small', 'primary', showIconRight=true, IconContentRight='Chevron-right', showIconLeft=true, IconContentLeft='Home')}}
       {{ Button('Hallo', 'regular', 'primary', showIconRight=true, IconContentRight='Chevron-right')}}
@@ -245,9 +243,6 @@ permalink: /playground/
         ParagraphContent = 'Experience comfort and style with our modern chair, perfect for any living space.'
     ) }}
     {% endset %}
-    <div class="testdiv2">
-      {{ Slider(SliderType = "HeroSlider", HeroSlides = [Slide1, Slide1]) }}
-    </div>
     <div class="testdiv3">
       {{ StaticBanner ( BannerImage = '/assets/img/SliderImage.jpg', Position = 'center', HeadingContent = 'DISCOVER OUR NEW COLLECTION', ParagraphContent = 'Explore the latest trends and styles in our new collection. Shop now and elevate your wardrobe.') }}
     </div>
@@ -265,7 +260,6 @@ permalink: /playground/
     <script src="/_includes/components/Atoms/Textarea/Textarea.js"></script>
     <script src="/_includes/components/Atoms/Dropdown/Dropdown.js"></script>
     <script src="/_includes/components/Atoms/Chip/Chip.js"></script>
-    <script src="/_includes/components/Organisms/Slider/Slider.js"></script>
     <script src="/_includes/components/Organisms/AppNav/AppNav.js"></script>
   </body>
 </html>

@@ -1,6 +1,22 @@
 .Icon {
   display: flex;
 
+  &_Link {
+    color: inherit;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: var(--border-focus) solid var(--color-focus);
+      border-radius: var(--border-radius-normal);
+      outline-offset: -3px;
+      z-index: 1000;
+    }
+
+    &:active:focus-visible {
+      outline: none;
+    }
+  }
+
   &-white {
     color: var(--color-white);
   }

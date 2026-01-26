@@ -55,4 +55,16 @@
     left: var(--space-10);
     color: var(--color-white);
   }
+
+  &_Link {
+    &:focus-visible {
+      outline: var(--border-focus) solid var(--color-focus);
+      outline-offset: 0px;
+      border-radius: var(--border-radius-normal);
+    }
+
+    &:active:focus-visible {
+      outline: none;
+    }
+  }
 }

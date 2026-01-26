@@ -14,6 +14,7 @@ module.exports = function(eleventyConfig) {
   	eleventyConfig.addWatchTarget('./src/_includes/components/**/**/*');
 	eleventyConfig.addPassthroughCopy("src/assets/fonts");
 	eleventyConfig.addPassthroughCopy("src/assets/img");
+	eleventyConfig.addPassthroughCopy("src/assets/vendor");
 	eleventyConfig.addPassthroughCopy("src/_includes/components/**/**/**.js");
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",

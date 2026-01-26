@@ -10,6 +10,7 @@ breadcrumbs:
 ---
 
 {%- from '_includes/components/Atoms/Button/Button.njk' import Button %}
+{%- from '_includes/components/Atoms/Icon/Icon.njk' import IconEmbedded %}
 {%- from '_includes/components/Atoms/Link/Link.njk' import UtilityLink %}
 {%- from '_includes/components/Atoms/Chip/Chip.njk' import Chip %}
 {%- from '_includes/components/Atoms/Heading/Heading.njk' import Heading %}
@@ -43,7 +44,11 @@ breadcrumbs:
         ]) }}
         <div class="pdp_block">
             {{ UtilityLink(Weight = 'bold') }}
-            {{ IconGroup ( Icons = [ 'Info', 'Help', 'Globe', 'Contact' ]) }}
+            {% call IconGroup() %}
+            {{ IconEmbedded(Icon='File') }}
+            {{ IconEmbedded(Icon='Chart') }}
+            {{ IconEmbedded(Icon='Contact') }}
+            {% endcall %}
         </div>
         <div class="pdp_buttonwrapper">
             {{ Paragraph (Size = '-sizeXS', Content = 'Lieferung 1 - 3 Werktage') }}

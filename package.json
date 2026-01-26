@@ -1,7 +1,7 @@
 {
   "name": "two-leaf",
   "version": "1.0.0",
-  "description": "",
+  "description": "Two Leaf - Premium tea shop web app built with Eleventy and Nunjucks.",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --watch --serve"
@@ -10,8 +10,24 @@
     "type": "git",
     "url": "git+https://david.obenaus@bitbucket.org/kittelberger-media-solutions/two-leaf.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [  
+  "tea",
+  "tea-shop", 
+  "organic-tea",
+  "matcha",
+  "e-commerce",
+  "eleventy",
+  "11ty",
+  "nunjucks",
+  "scss",
+  "sass",
+  "swiper",
+  "mobile-first",
+  "responsive",
+  "pwa",
+  "web-app",
+  "component-library"],
+  "author": "David Obenaus",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {

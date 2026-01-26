@@ -56,7 +56,15 @@
                 <div class="Footer_Content">
                     <div class="Footer_VerbindenWrapper">
                         {{ Paragraph(Content = 'Socials') }}
-                        {{ IconGroup( Icons = [ 'Instagram', 'Youtube', 'Discord', 'Facebook', 'TikTok', 'Twitch', 'Reddit']) }}
+                        {% call IconGroup() %}
+                        {{ IconEmbedded(Icon = 'Instagram', Link = true) }}
+                        {{ IconEmbedded(Icon = 'Youtube', Link = true) }}
+                        {{ IconEmbedded(Icon = 'Discord', Link = true) }}
+                        {{ IconEmbedded(Icon = 'Facebook', Link = true) }}
+                        {{ IconEmbedded(Icon = 'TikTok', Link = true) }}
+                        {{ IconEmbedded(Icon = 'Twitch', Link = true) }}
+                        {{ IconEmbedded(Icon = 'Reddit', Link = true) }}
+                        {% endcall %}
                         {{ Inputfield (Type = 'email', Placeholder = 'E-Mail-Adresse', LabelTop = true, LabelTopContent = 'Newsletter') }}
                     </div>
                 </div>
