@@ -13,7 +13,9 @@
 }
 
 .swiper-wrapper {
-  height: auto;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 800px;
 }
 
 // ===================
@@ -22,6 +24,9 @@
 .swiper--navigation {
   --swiper-navigation-top-offset: 80%;
   --swiper-navigation-sides-offset: 112px;
+
+  height: 100vh;
+  height: 100dvh;
 
   .swiper-button-prev {
     width: 48px;

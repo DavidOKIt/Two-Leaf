@@ -1,8 +1,21 @@
 .shop {
   display: flex;
   flex-direction: column;
-  gap: var(--space-16);
+  align-items: center;
   padding-bottom: var(--space-16);
+
+  &_buttonwrapper {
+    display: flex;
+    width: 100%;
+    gap: var(--space-16);
+    flex-direction: column;
+  }
+
+  &_content {
+    display: flex;
+    max-width: 730px;
+    flex-direction: column;
+  }
 }
 
 .shop-filter {

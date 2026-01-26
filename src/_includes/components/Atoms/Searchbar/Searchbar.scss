@@ -2,6 +2,7 @@
   &_FocusWrapper {
     display: flex;
     width: auto;
+    max-width: 328px;
 
     &:focus-within {
       background-color: var(--color-copper-active);
