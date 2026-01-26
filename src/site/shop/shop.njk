@@ -13,12 +13,9 @@ breadcrumbs:
 {%- from '_includes/components/Organisms/Gallery/Gallery.njk' import GalleryGrid %}
 
 <div class="shop">
-    <div class="shop_buttonwrapper">
-        {{ Searchbar() }}
-        {{ Button(fullWidth = true, Label = 'FILTER', showIconRight = true, IconContentRight = 'Filter', href = '/shop-filter', disabled = false) }}
-    </div>
-    <div class="shop_content">
-        {{ GalleryGrid(items = [
+    {{ Searchbar() }}
+    {{ Button(fullWidth = true, Label = 'FILTER', showIconRight = true, IconContentRight = 'Filter', href = '/shop-filter', disabled = false) }}
+    {{ GalleryGrid(items = [
     {src: "../assets/img/GalleryItem1zu1.jpg", label: "Label", target: "/shop-pdp/"},
     {src: "../assets/img/GalleryItem1zu1.jpg", label: "Label", target: "/shop-pdp/"},
     {src: "../assets/img/GalleryItem1zu1.jpg", label: "Label", target: "/shop-pdp/"},
@@ -34,5 +31,4 @@ breadcrumbs:
     {src: "../assets/img/GalleryItem1zu1.jpg", label: "Label", target: "/shop-pdp/"},
     {src: "../assets/img/GalleryItem1zu1.jpg", label: "Label", target: "/shop-pdp/"}
 ]) }}
-    </div>
 </div>
