@@ -8,7 +8,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/assets/fonts");
 	eleventyConfig.addPassthroughCopy("src/assets/img");
 	eleventyConfig.addPassthroughCopy("src/assets/vendor");
-	eleventyConfig.addPassthroughCopy("src/_includes/components/**/**/**.js");
+
+	eleventyConfig.addPassthroughCopy("src/_includes/components/**/*.js");
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
 
