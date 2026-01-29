@@ -7,6 +7,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Two Leaf - A modern web project">
+
+        {# Open Graph für Link-Vorschau #}
+        <meta property="og:title" content="{{ title | default('Two Leaf') }}">
+        <meta property="og:description" content="Two Leaf - A modern web project">
+        <meta property="og:image" content="https://davidokit.github.io/Two-Leaf/assets/img/og-image.jpeg">
+        <meta property="og:url" content="https://davidokit.github.io/Two-Leaf/">
+        <meta property="og:type" content="website">
+
         <title>{{ title | default('Two Leaf') }}</title>
         <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ '/assets/img/LogoLeafs.svg' | url }}">
 
