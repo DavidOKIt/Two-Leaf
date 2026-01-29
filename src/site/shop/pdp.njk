@@ -18,7 +18,7 @@ breadcrumbs:
 {%- from '../../_includes/components/Atoms/Image/Image.njk' import Image %}
 {%- from '../../_includes/components/Molecules/Rating/Rating.njk' import UneditableRating %}
 {%- from '../../_includes/components/Molecules/IconGroup/IconGroup.njk' import IconGroup %}
-{%- from '../../_includes/components/Molecules/Downloadfield/Downloadfield.njk' import Downloadfield %}
+{%- from '../../_includes/components/Molecules/DownloadField/DownloadField.njk' import DownloadField %}
 {%- from '../../_includes/components/Molecules/Table/Table.njk' import StaticTable %}
 
 <div class="pdp">
@@ -56,7 +56,7 @@ breadcrumbs:
             {{ Paragraph (Size = '-sizeXS', Content = 'inkl. MwSt., exkl. Versandkosten  |  ID 7386 - 400€ / 1kg ') }}
         </div>
         <div class="pdp_end">
-            {{ Downloadfield (Title = 'Tea Sheet - Product Name', Details = 'PDF, 4.5MB') }}
+            {{ DownloadField (Title = 'Tea Sheet - Product Name', Details = 'PDF, 4.5MB') }}
         </div>
     </div>
 </div>
